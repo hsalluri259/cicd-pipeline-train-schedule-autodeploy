@@ -61,6 +61,7 @@ pipeline {
                 CANARY_REPLICAS = 0
             }
             steps {
+                //remove this input step if you don't want human apporval to do production deployment
                 input 'Deploy to Production?'
                 milestone(1)
                 kubernetesDeploy(
